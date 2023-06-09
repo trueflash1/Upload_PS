@@ -199,7 +199,16 @@ def upload_kusochkami(SepCursor1, uiNmae, link, name, sleep, all_string_for_upda
     uiNmae.count_progress.setText(str(count) + "/" + str(len(all_string_for_update)))
 
 def exception_list(SepCursor_one, name):
-    None
+    file = open("example.txt", "w")
+
+    # Создаем строку, которую мы хотим записать в файл
+    string_to_write = SepCursor_one + name
+
+    # Записываем строку в файл
+    file.write(string_to_write)
+
+    # Закрываем файл
+    file.close()
 
 # фиксация даты, активация\деактивация кнопок и смена надписи
 def set_date():
