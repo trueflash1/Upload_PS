@@ -199,7 +199,16 @@ def upload_kusochkami(SepCursor1, uiNmae, link, name, sleep, all_string_for_upda
     uiNmae.count_progress.setText(str(count) + "/" + str(len(all_string_for_update)))
 
 def exception_list(SepCursor_one, name):
-    None
+    file = open("example.txt", "w")
+
+    # Создаем строку, которую мы хотим записать в файл
+    string_to_write = SepCursor_one + name
+
+    # Записываем строку в файл
+    file.write(string_to_write)
+
+    # Закрываем файл
+    file.close()
 
 # фиксация даты, активация\деактивация кнопок и смена надписи
 def set_date():
@@ -1291,4 +1300,30 @@ def Upload_Marks():
 # ----------------------------------------------------------------------------
 ui.marks.clicked.connect(Upload_marks)
 # ----------------------------------------------------------------------------
+
+def run_download_functions():
+    # Функция 1 для загрузки
+    Upload_study_plan_students()
+
+    # Функция 2 для загрузки
+    Upload_contingent_flows()
+
+    # Функция 3 для загрузки
+    Upload_study_plan_students_window()
+
+    # Функция 4 для загрузки
+    upload_all_marks()
+
+    # Функция 5 для загрузки
+    upload_chose_students()
+
+    # Функция 6 для загрузки
+    upload_chose_disciplin()
+
+    # Функция 7 для загрузки
+    importdiscipline()
+
+    # Функция 8 для загрузки
+    Upload_Marks()
+
 sys.exit(app.exec_())
