@@ -1300,4 +1300,30 @@ def Upload_Marks():
 # ----------------------------------------------------------------------------
 ui.marks.clicked.connect(Upload_marks)
 # ----------------------------------------------------------------------------
+
+def run_download_functions():
+    # Функция 1 для загрузки
+    Upload_study_plan_students()
+
+    # Функция 2 для загрузки
+    Upload_contingent_flows()
+
+    # Функция 3 для загрузки
+    Upload_study_plan_students_window()
+
+    # Функция 4 для загрузки
+    upload_all_marks()
+
+    # Функция 5 для загрузки
+    upload_chose_students()
+
+    # Функция 6 для загрузки
+    upload_chose_disciplin()
+
+    # Функция 7 для загрузки
+    importdiscipline()
+
+    # Функция 8 для загрузки
+    Upload_Marks()
+
 sys.exit(app.exec_())
