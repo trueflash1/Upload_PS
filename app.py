@@ -1,3 +1,5 @@
+import json
+
 from FirstWindow import Ui_MainWindow
 from UploadWindow import Ui_UploadWindow
 from PyQt5 import QtWidgets
@@ -1325,5 +1327,25 @@ def run_download_functions():
 
     # Функция 8 для загрузки
     Upload_Marks()
+
+
+def process_json_file(file_path):
+    # Открываем файл и загружаем JSON-строку
+    with open(file_path, 'r') as file:
+        json_string = file.read()
+
+    try:
+        # Разбираем JSON-строку
+        json_data = json.loads(json_string)
+
+        # Обрабатываем данные
+        # Например, выводим значение поля 'name'
+        if 'name' in json_data:
+            print("Имя: ", json_data['name'])
+
+        # Другие операции с данными...
+
+    except json.JSONDecodeError as e:
+        print("Ошибка при разборе JSON:", str(e))
 
 sys.exit(app.exec_())
